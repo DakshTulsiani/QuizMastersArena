@@ -1,1 +1,90 @@
-S
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+        body {
+            color: #0360b6; font-family: Arial, sans-serif; background-image: url("woe.jpg"); background-size: 100% 100%;
+        }
+        h1, h2 {
+            color: #0360b6;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .result {
+            margin-top: 20px;
+        }
+   </style>
+</head>
+<body style="height: 945px;">
+    <h1>Answer the questions of this quiz</h1>
+
+    <div class="question">
+        <h2>Q1: Find the mean of the given data- 16, 15, 19, 8, 12.</h2>
+        <input type="radio" name="question1" value="13">13<br>
+        <input type="radio" name="question1" value="16">16<br>
+        <input type="radio" name="question1" value="14">14<br>
+        <input type="radio" name="question1" value="15">15<br>
+    </div>
+
+    <div class="question">
+        <h2>Q2: The sum of the exterior angles of a triangle is-</h2>
+        <input type="radio" name="question2" value="360°">360°<br>
+        <input type="radio" name="question2" value="180°">180°<br>
+        <input type="radio" name="question2" value="540°">540°<br>
+        <input type="radio" name="question2" value="270°">270°<br>
+
+    <div class="question">
+        <h2>Q3: Name the somplement of an agle which is 3x-8 is-</h2>
+        <input type="radio" name="question3" value="2x+82">2x+82<br>
+        <input type="radio" name="question3" value="3x+82">3x+82<br>
+        <input type="radio" name="question3" value="98-3x">98-3x<br>
+        <input type="radio" name="question3" value="30+6x">30+6x<br>
+    </div>
+
+    <button onclick="submitQuiz()">Submit</button>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        function submitQuiz() {
+            // Correct answers
+            const correctAnswers = {
+                question1: '14',
+                question2: '360°',
+                question3: '98-3x'
+            };
+
+            // Get user answers
+            const userAnswers = {
+                question1: document.querySelector('input[name="question1"]:checked')?.value,
+                question2: document.querySelector('input[name="question2"]:checked')?.value,
+                question3: document.querySelector('input[name="question3"]:checked')?.value
+            };
+
+            // Prepare result
+            let resultText = '';
+            let correctCount = 0;
+
+            for (let question in correctAnswers) {
+                const userAnswer = userAnswers[question];
+                const correctAnswer = correctAnswers[question];
+
+                if (userAnswer === correctAnswer) {
+                    correctCount++;
+                    resultText += `<p>Q: ${question.replace('question', '')} - Your answer: ${userAnswer} (Correct)</p>`;
+                } else {
+                    resultText += `<p>Q: ${question.replace('question', '')} - Your answer: ${userAnswer || 'No answer'} (Incorrect, correct answer is ${correctAnswer})</p>`;
+                }
+            }
+
+            resultText += `<p>Total correct answers: ${correctCount} out of 3</p>`;
+            document.getElementById('result').innerHTML = resultText;
+        }
+
+    </script>
+</body>
+</html>
