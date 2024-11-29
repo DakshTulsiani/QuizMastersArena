@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Answer the questions of this quiz</h1>
+
+    <div class="question">
+        <h2>Q1: How many letters are there in the word India?</h2>
+        <input type="radio" name="question1" value="6">6<br>
+        <input type="radio" name="question1" value="8">8<br>
+        <input type="radio" name="question1" value="2">2<br>
+        <input type="radio" name="question1" value="5">5<br>
+    </div>
+
+    <div class="question">
+        <h2>Q2: Add 51 and 24.</h2>
+        <input type="radio" name="question2" value="68">68<br>
+        <input type="radio" name="question2" value="82">82<br>
+        <input type="radio" name="question2" value="75">75<br>
+        <input type="radio" name="question2" value="52">52<br>
+    </div>
+
+    <div class="question">
+        <h2>Q3: How can you write 54 in words?</h2>
+        <input type="radio" name="question3" value="fifty four">fifty four<br>
+        <input type="radio" name="question3" value="forty four">forty four<br>
+        <input type="radio" name="question3" value="thirty three">thirty three<br>
+        <input type="radio" name="question3" value="twenty nine">twenty nine<br>
+    </div>
+
+    <button onclick="submitQuiz()">Submit</button>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        function submitQuiz() {
+            // Correct answers
+            const correctAnswers = {
+                question1: '5',
+                question2: '75',
+                question3: 'fifty four'
+            };
+
+            // Get user answers
+            const userAnswers = {
+                question1: document.querySelector('input[name="question1"]:checked')?.value,
+                question2: document.querySelector('input[name="question2"]:checked')?.value,
+                question3: document.querySelector('input[name="question3"]:checked')?.value
+            };
+
+            // Prepare result
+            let resultText = '';
+            let correctCount = 0;
+
+            for (let question in correctAnswers) {
+                const userAnswer = userAnswers[question];
+                const correctAnswer = correctAnswers[question];
+
+                if (userAnswer === correctAnswer) {
+                    correctCount++;
+                    resultText += `<p>Q: ${question.replace('question', '')} - Your answer: ${userAnswer} (Correct)</p>`;
+                } else {
+                    resultText += `<p>Q: ${question.replace('question', '')} - Your answer: ${userAnswer || 'No answer'} (Incorrect, correct answer is ${correctAnswer})</p>`;
+                }
+            }
+
+            resultText += `<p>Total correct answers: ${correctCount} out of 3</p>`;
+            document.getElementById('result').innerHTML = resultText;
+        }
+
+    </script>
+</body>
+</html>

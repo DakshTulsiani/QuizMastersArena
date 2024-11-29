@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; background-color: yellow
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Answer the questions of this quiz</h1>
+
+    <div class="question">
+        <h2>Q1: Tearing of paper is-</h2>
+        <input type="radio" name="question1" value="irreversible change">irreversible change<br>
+        <input type="radio" name="question1" value="chemical change">chemical change<br>
+        <input type="radio" name="question1" value="not a physical change">not a physical change<br>
+        <input type="radio" name="question1" value="reversible change">reversible change<br>
+    </div>
+
+    <div class="question">
+        <h2>Q2: pH of HCl is.</h2>
+        <input type="radio" name="question2" value="7">7<br>
+        <input type="radio" name="question2" value="9">9<br>
+        <input type="radio" name="question2" value="0">0<br>
+        <input type="radio" name="question2" value="3">3
+
+    <div class="question">
+        <h2>Q3: Which of these is soapy to touch?</h2>
+        <input type="radio" name="question3" value="acid">acid<br>
+        <input type="radio" name="question3" value="salt">salt<br>
+        <input type="radio" name="question3" value="spice">spice<br>
+        <input type="radio" name="question3" value="base">base<br>
+    </div>
+
+    <button onclick="submitQuiz()">Submit</button>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        function submitQuiz() {
+            // Correct answers
+            const correctAnswers = {
+                question1: 'reversible change',
+                question2: '7',
+                question3: 'base'
+            };
+
+            // Get user answers
+            const userAnswers = {
+                question1: document.querySelector('input[name="question1"]:checked')?.value,
+                question2: document.querySelector('input[name="question2"]:checked')?.value,
+                question3: document.querySelector('input[name="question3"]:checked')?.value
+            };
+
+            // Prepare result
+            let resultText = '';
+            let correctCount = 0;
+
+            for (let question in correctAnswers) {
+                const userAnswer = userAnswers[question];
+                const correctAnswer = correctAnswers[question];
+
+                if (userAnswer === correctAnswer) {
+                    correctCount++;
+                    resultText += `<p>Q: ${question.replace('question', '')} - Your answer: ${userAnswer} (Correct)</p>`;
+                } else {
+                    resultText += `<p>Q: ${question.replace('question', '')} - Your answer: ${userAnswer || 'No answer'} (Incorrect, correct answer is ${correctAnswer})</p>`;
+                }
+            }
+
+            resultText += `<p>Total correct answers: ${correctCount} out of 3</p>`;
+            document.getElementById('result').innerHTML = resultText;
+        }
+
+    </script>
+</body>
+</html>

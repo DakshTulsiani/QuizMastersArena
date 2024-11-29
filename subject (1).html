@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Choose Your Subject</title>
+    <style>
+        body {
+            background-image: url('daks.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.9;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .subject-box {
+            width: 200px;
+            height: 100px;
+            background-color: #FFC107;
+            margin: 20px;
+            padding: 20px;
+            font-size: 24px;
+            text-align: center;
+            cursor: pointer;
+            display: inline-block;
+            border-radius: 20px;
+        }
+        .subject-container, .difficulty-container, .question-container {
+            text-align: center;
+            width: 80%;
+            margin: 100px auto 0;
+            padding: 50px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+        }
+        .difficulty-box {
+            width: 50px;
+            height: 50px;
+            background-color: #007BFF;
+            margin: 10px;
+            display: inline-block;
+            line-height: 50px;
+            color: white;
+            font-size: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="subject-container" id="subject-container">
+        <h1>Choose Your Subject</h1>
+        <script>
+            // Get the class name from local storage
+            const className = localStorage.getItem('class') || "Class 1"; // Default to Class 1 if not set
+
+            // Define subjects for each class
+            const subjects = {
+                "Class 1": ["Maths", "English", "Hindi", "GK"],
+                "Class 2": ["Maths", "English", "Hindi", "GK"],
+                "Class 3": ["Maths", "English", "Hindi", "Science", "Computer", "GK"],
+                "Class 4": ["Maths", "English", "Hindi", "Science", "Social Science", "Computer", "GK"],
+                "Class 5": ["Maths", "English", "Hindi", "Science", "Social Science", "Computer", "GK"],
+                "Class 6": ["Maths", "English", "Hindi", "Science", "Social Science", "Computer", "Sanskrit", "French", "GK"],
+                "Class 7": ["Maths", "English", "Hindi", "Science", "Social Science", "Computer", "Sanskrit", "French", "GK"],
+                "Class 8": ["Maths", "English", "Hindi", "Physics", "Chemistry", "Biology", "Social Science", "Computer", "Sanskrit", "French", "GK"]
+            };
+
+            // Get the subject container
+            const subjectContainer = document.getElementById('subject-container');
+
+            // Create subject boxes
+            subjects[className].forEach(subject => {
+                const subjectBox = document.createElement('div');
+                subjectBox.className = 'subject-box';
+                subjectBox.textContent = subject;
+                subjectBox.onclick = () => {
+                    // Create difficulty container
+                    const difficultyContainer = document.createElement('div');
+                    difficultyContainer.className = 'difficulty-container';
+                    difficultyContainer.innerHTML = `
+                        <h1>Choose Your Difficulty Level</h1>
+                        <div id="difficulty-levels"></div>
+                        <button onclick="proceedToQuestions('${subject}')">Next</button>
+                    `;
+                    // Replace subject container with difficulty container
+                    subjectContainer.parentNode.replaceChild(difficultyContainer, subjectContainer);
+                    createDifficultyLevels(difficultyContainer);
+                };
+                subjectContainer.appendChild(subjectBox);
+            });
+
+            function createDifficultyLevels(container) {
+                const difficultyLevels = document.getElementById('difficulty-levels');
+                for (let i = 1; i <= 10; i++) {
+                    const difficultyBox = document.createElement('div');
+                    difficultyBox.className = 'difficulty-box';
+                    difficultyBox.textContent = i;
+                    difficultyBox.onclick = () => {
+                        document.querySelectorAll('.difficulty-box').forEach(box => box.style.backgroundColor = '#007BFF'); // Reset color
+                        difficultyBox.style.backgroundColor = '#0056b3'; // Highlight selected
+                        difficultyBox.setAttribute('data-selected', 'true'); // Mark as selected
+                    };
+                    difficultyLevels.appendChild(difficultyBox);
+                }
+            }
+
+            function proceedToQuestions(subject) {
+                const difficultyBox = document.querySelector('.difficulty-box[data-selected="true"]');
+                if (!difficultyBox) {
+                    alert("Please select a difficulty level.");
+                    return;
+                }
+                const difficultyLevel = difficultyBox.textContent;
+                const subjectMap = {
+                    "Maths": {
+                        "Class 1": "m1.html",
+                        "Class 2": "m2.html",
+                        "Class 3": "m3.html",
+                        "Class 4": "m4.html",
+                        "Class 5": "m5.html",
+                        "Class 6": "m6.html",
+                        "Class 7": "m7.html",
+                        "Class 8": "m8.html",
+                    },
+                    "English": {
+                        "Class 1": "e1.html",
+                        "Class 2": "e2.html",
+                        "Class 3": "e3.html",
+                        "Class 4": "e4.html",
+                        "Class 5": "e5.html",
+                        "Class 6": "e6.html",
+                        "Class 7": "e7.html",
+                        "Class 8": "e8.html",
+                    },
+                    "Hindi": {
+                        "Class 1": "h1.html",
+                        "Class 2": "h2.html",
+                        "Class 3": "h3.html",
+                        "Class 4": "h4.html",
+                        "Class 5": "h5.html",
+                        "Class 6": "h6.html",
+                        "Class 7": "h7.html",
+                        "Class 8": "h8.html",
+                    },
+                    "GK": {
+                        "Class 1": "g1.html",
+                        "Class 2": "g2.html",
+                        "Class 3": "g3.html",
+                        "Class 4": "g4.html",
+                        "Class 5": "g5.html",
+                        "Class 6": "g6.html",
+                        "Class 7": "g7.html",
+                        "Class 8": "g8.html",
+                    },
+                    "Science": {
+                        "Class 3": "s3.html",
+                        "Class 4": "s4.html",
+                        "Class 5": "s5.html",
+                        "Class 6": "s6.html",
+                        "Class 7": "s7.html",
+                    },
+                    "Social Science": {
+                        "Class 3": "so3.html",
+                        "Class 4": "so4.html",
+                        "Class 5": "so5.html",
+                        "Class 6": "so6.html",
+                        "Class 7": "so7.html",
+                        "Class 8": "so8.html",
+                    },
+                    "Computer": {
+                        "Class 3": "co3.html",
+                        "Class 4": "co4.html",
+                        "Class 5": "co5.html",
+                        "Class 6": "co6.html",
+                        "Class 7": "co7.html",
+                        "Class 8": "co8.html",
+                    },
+                    "Sanskrit": {
+                        "Class 6": "sa6.html",
+                        "Class 7": "sa7.html",
+                        "Class 8": "sa8.html",
+                    },
+                    "French": {
+                        "Class 6": "f6.html",
+                        "Class 7": "f7.html",
+                        "Class 8": "f8.html",
+                    },
+                    "Physics": {
+                        "Class 8": "p8.html",
+                    },
+                    "Chemistry": {
+                        "Class 8": "c8.html",
+                    },
+                    "Biology": {
+                        "Class 8": "b8.html",
+                    },
+                };
+
+                const url = subjectMap[subject][className];
+                if (url) {
+                    window.location.href = url;
+                } else {
+                    alert("No questions available for this subject and class.");
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>
