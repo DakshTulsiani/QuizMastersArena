@@ -1,1 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+        body {
+            color: #0360b6; font-family: Arial, sans-serif; background-image: url("woe.jpg"); background-size: 100% 100%;
+        }
+        h1, h2 {
+            color: #0360b6;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .result {
+            margin-top: 20px;
+        }
+   </style>
+</head>
+<body style="height: 945px;">
+    <h1>Answer the questions of this quiz</h1>
 
+    <div class="question">
+        <h2>Q1: The number of clauses in the given sentence are:<br>I went to the store becuase I needed to buy milk, which I forgot to buy yesterday.</h2>
+        <input type="radio" name="question1" value="1">1<br>
+        <input type="radio" name="question1" value="3">3<br>
+        <input type="radio" name="question1" value="2">2<br>
+        <input type="radio" name="question1" value="4">4<br>
+    </div>
+
+    <div class="question">
+        <h2>Q2: Fill in the blank with a suitable modal:<br>I ___ wake up really late when I was young.</h2>
+        <input type="radio" name="question2" value="must">must<br>
+        <input type="radio" name="question2" value="should">should<br>
+        <input type="radio" name="question2" value="would">would<br>
+        <input type="radio" name="question2" value="used to">used to<br>
+
+    <div class="question">
+        <h2>Q3: What is the meaning of the word juvenile</h2>
+        <input type="radio" name="question3" value="A minor sentenced to jail.">A minor sentenced to jail.<br>
+        <input type="radio" name="question3" value="A person in their teenage years.">A person in their teenage years.<br>
+        <input type="radio" name="question3" value="A person older than 18 but not older than 25.">A person older than 18 but not older than 25.<br>
+        <input type="radio" name="question3" value="A special dish used for serving food.">A special dish used for serving food.<br>
+    </div>
+
+    <button onclick="submitQuiz()">Submit</button>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        function submitQuiz() {
+            // Correct answers
+            const correctAnswers = {
+                question1: '3',
+                question2: 'used to',
+                question3: 'A person in their teenage years.'
+            };
+
+            // Get user answers
+            const userAnswers = {
+                question1: document.querySelector('input[name="question1"]:checked')?.value,
+                question2: document.querySelector('input[name="question2"]:checked')?.value,
+                question3: document.querySelector('input[name="question3"]:checked')?.value
+            };
+
+            // Prepare result
+            let resultText = '';
+            let correctCount = 0;
+
+            for (let question in correctAnswers) {
+                const userAnswer = userAnswers[question];
+                const correctAnswer = correctAnswers[question];
+
+                if (userAnswer === correctAnswer) {
+                    correctCount++;
+                    resultText += `<p>Q: ${question.replace('question', '')} - Your answer: ${userAnswer} (Correct)</p>`;
+                } else {
+                    resultText += `<p>Q: ${question.replace('question', '')} - Your answer: ${userAnswer || 'No answer'} (Incorrect, correct answer is ${correctAnswer})</p>`;
+                }
+            }
+
+            resultText += `<p>Total correct answers: ${correctCount} out of 3</p>`;
+            document.getElementById('result').innerHTML = resultText;
+        }
+
+    </script>
+</body>
+</html>
