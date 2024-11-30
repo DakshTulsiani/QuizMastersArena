@@ -17,13 +17,16 @@
         .result {
             margin-top: 20px;
         }
-   </style>
+        #seeScoreButton {
+            display: none; /* Hide the See Score button initially */
+        }
+    </style>
 </head>
 <body style="height: 945px;">
     <h1>Answer the questions of this quiz</h1>
 
     <div class="question">
-        <h2>Q1: The number of clauses in the given sentence are:<br>I went to the store becuase I needed to buy milk, which I forgot to buy yesterday.</h2>
+        <h2>Q1: The number of clauses in the given sentence are:<br>I went to the store because I needed to buy milk, which I forgot to buy yesterday.</h2>
         <input type="radio" name="question1" value="1">1<br>
         <input type="radio" name="question1" value="3">3<br>
         <input type="radio" name="question1" value="2">2<br>
@@ -36,9 +39,10 @@
         <input type="radio" name="question2" value="should">should<br>
         <input type="radio" name="question2" value="would">would<br>
         <input type="radio" name="question2" value="used to">used to<br>
+    </div>
 
     <div class="question">
-        <h2>Q3: What is the meaning of the word juvenile</h2>
+        <h2>Q3: What is the meaning of the word juvenile?</h2>
         <input type="radio" name="question3" value="A minor sentenced to jail.">A minor sentenced to jail.<br>
         <input type="radio" name="question3" value="A person in their teenage years.">A person in their teenage years.<br>
         <input type="radio" name="question3" value="A person older than 18 but not older than 25.">A person older than 18 but not older than 25.<br>
@@ -48,6 +52,9 @@
     <button onclick="submitQuiz()">Submit</button>
 
     <div class="result" id="result"></div>
+
+    <!-- Initially hidden "See Score" button -->
+    <a href="lead.html"><button id="seeScoreButton">See Score</button></a>
 
     <script>
         function submitQuiz() {
@@ -83,9 +90,10 @@
 
             resultText += `<p>Total correct answers: ${correctCount} out of 3</p>`;
             document.getElementById('result').innerHTML = resultText;
-        }
 
+            // Show the "See Score" button after submitting the quiz
+            document.getElementById('seeScoreButton').style.display = 'inline'; // Make it visible
+        }
     </script>
-<a href="lead.html"><button>See Score</button></a>
 </body>
 </html>
