@@ -17,6 +17,9 @@
         .result {
             margin-top: 20px;
         }
+        #seeScoreButton {
+            display: none;
+        }
    </style>
 </head>
 <body style="height: 945px;">
@@ -36,9 +39,10 @@
         <input type="radio" name="question2" value="180°">180°<br>
         <input type="radio" name="question2" value="540°">540°<br>
         <input type="radio" name="question2" value="270°">270°<br>
+    </div>
 
     <div class="question">
-        <h2>Q3: Name the somplement of an agle which is 3x-8 is-</h2>
+        <h2>Q3: Name the complement of an angle which is 3x-8:</h2>
         <input type="radio" name="question3" value="2x+82">2x+82<br>
         <input type="radio" name="question3" value="3x+82">3x+82<br>
         <input type="radio" name="question3" value="98-3x">98-3x<br>
@@ -48,6 +52,8 @@
     <button onclick="submitQuiz()">Submit</button>
 
     <div class="result" id="result"></div>
+
+    <a href="lead.html"><button id="seeScoreButton">See Score</button></a>
 
     <script>
         function submitQuiz() {
@@ -83,9 +89,10 @@
 
             resultText += `<p>Total correct answers: ${correctCount} out of 3</p>`;
             document.getElementById('result').innerHTML = resultText;
-        }
 
+            // Show the "See Score" button
+            document.getElementById('seeScoreButton').style.display = 'inline';
+        }
     </script>
-        <a href="lead.html"><button>See Score</button></a>
 </body>
 </html>
