@@ -17,6 +17,9 @@
         .result {
             margin-top: 20px;
         }  
+        #seeScoreButton {
+            display: none;
+        }
     </style>
 </head>
 <body style="height: 945px;">
@@ -50,23 +53,22 @@
 
     <div class="result" id="result"></div>
 
+    <a href="lead.html"><button id="seeScoreButton">See Score</button></a>
+
     <script>
         function submitQuiz() {
-            // Correct answers
             const correctAnswers = {
                 question1: '5',
                 question2: '75',
                 question3: 'fifty four'
             };
 
-            // Get user answers
             const userAnswers = {
                 question1: document.querySelector('input[name="question1"]:checked')?.value,
                 question2: document.querySelector('input[name="question2"]:checked')?.value,
                 question3: document.querySelector('input[name="question3"]:checked')?.value
             };
 
-            // Prepare result
             let resultText = '';
             let correctCount = 0;
 
@@ -84,9 +86,9 @@
 
             resultText += `<p>Total correct answers: ${correctCount} out of 3</p>`;
             document.getElementById('result').innerHTML = resultText;
-        }
 
+            document.getElementById('seeScoreButton').style.display = 'inline';
+        }
     </script>
-    <a href="lead.html"><button>See Score</button></a>
 </body>
 </html>
