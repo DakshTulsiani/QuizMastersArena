@@ -17,6 +17,9 @@
         .result {
             margin-top: 20px;
         }
+        #seeScoreButton {
+            display: none;
+        }
    </style>
 </head>
 <body style="height: 945px;">
@@ -36,6 +39,7 @@
         <input type="radio" name="question2" value="9">9<br>
         <input type="radio" name="question2" value="0">0<br>
         <input type="radio" name="question2" value="3">3<br>
+    </div>
 
     <div class="question">
         <h2>Q3: Which of these is soapy to touch?</h2>
@@ -48,6 +52,8 @@
     <button onclick="submitQuiz()">Submit</button>
 
     <div class="result" id="result"></div>
+
+    <a href="lead.html"><button id="seeScoreButton">See Score</button></a>
 
     <script>
         function submitQuiz() {
@@ -83,9 +89,10 @@
 
             resultText += `<p>Total correct answers: ${correctCount} out of 3</p>`;
             document.getElementById('result').innerHTML = resultText;
-        }
 
+            // Show the "See Score" button
+            document.getElementById('seeScoreButton').style.display = 'inline';
+        }
     </script>
-        <a href="lead.html"><button>See Score</button></a>
 </body>
 </html>
