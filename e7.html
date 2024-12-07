@@ -12,98 +12,270 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="An English quiz for brave seventh graders, can you pass the ultimate test and be crowned as the winner.">
-    <title>English Quiz for brave seventh graders</title>
+    <meta name="description" content="An English quiz for students with challenging and engaging questions.">
+    <title>English Quiz</title>
     <style>
         body {
-            color: #e5dfd6; font-family: Arial, sans-serif; background-image: url("woe.jpg"); background-size: 100% 100%;
+            font-family: Arial, sans-serif;
+            background-image: url("woe.jpg");
+            background-size: 100% 100%;
+            background-repeat: repeat-y;
+            margin: 0;
+            padding: 0;
+            color: #2E8B57;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
         }
         h1, h2 {
             color: #e5dfd6;
         }
-        .question {
+        .question-group {
             margin-bottom: 20px;
         }
         .result {
             margin-top: 20px;
         }
         #seeScoreButton {
-            display: none; /* Hide the See Score button initially */
+            display: none;
         }
     </style>
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 </head>
-<body style="height: 945px;">
-    <h1>Answer the questions of this quiz</h1>
+<body>
+    <div class="container">
+        <h1>Answer the Questions</h1>
+        
+        <!-- Question 1 -->
+        <div class="question-group">
+            <h2>Q1: The number of clauses in the given sentence are:<br>I went to the store because I needed to buy milk, which I forgot to buy yesterday.</h2>
+            <input type="radio" name="question1" value="1">1<br>
+            <input type="radio" name="question1" value="3">3<br>
+            <input type="radio" name="question1" value="2">2<br>
+            <input type="radio" name="question1" value="4">4<br>
+        </div>
 
-    <div class="question">
-        <h2>Q1: The number of clauses in the given sentence are:<br>I went to the store because I needed to buy milk, which I forgot to buy yesterday.</h2>
-        <input type="radio" name="question1" value="1">1<br>
-        <input type="radio" name="question1" value="3">3<br>
-        <input type="radio" name="question1" value="2">2<br>
-        <input type="radio" name="question1" value="4">4<br>
+        <!-- Question 2 -->
+        <div class="question-group">
+            <h2>Q2: Fill in the blank with a suitable modal:<br>I ___ wake up really late when I was young.</h2>
+            <input type="radio" name="question2" value="must">must<br>
+            <input type="radio" name="question2" value="should">should<br>
+            <input type="radio" name="question2" value="would">would<br>
+            <input type="radio" name="question2" value="used to">used to<br>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question-group">
+            <h2>Q3: What is the meaning of the word juvenile?</h2>
+            <input type="radio" name="question3" value="A minor sentenced to jail.">A minor sentenced to jail.<br>
+            <input type="radio" name="question3" value="A person in their teenage years.">A person in their teenage years.<br>
+            <input type="radio" name="question3" value="A person older than 18 but not older than 25.">A person older than 18 but not older than 25.<br>
+            <input type="radio" name="question3" value="A special dish used for serving food.">A special dish used for serving food.<br>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question-group">
+            <h2>Q4: Choose the correct form of the verb to complete the sentence:<br>She ___ the book before going to bed.</h2>
+            <input type="radio" name="question4" value="reads">reads<br>
+            <input type="radio" name="question4" value="read">read<br>
+            <input type="radio" name="question4" value="reading">reading<br>
+            <input type="radio" name="question4" value="has read">has read<br>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question-group">
+            <h2>Q5: Choose the correct punctuation for the following sentence:<br>The teacher asked us to complete the homework on time ___</h2>
+            <input type="radio" name="question5" value=".">.<br>
+            <input type="radio" name="question5" value="!">!<br>
+            <input type="radio" name="question5" value="?">?<br>
+            <input type="radio" name="question5" value=",">,<br>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question-group">
+            <h2>Q6: Which of the following sentences is a compound sentence?</h2>
+            <input type="radio" name="question6" value="I love reading books.">I love reading books.<br>
+            <input type="radio" name="question6" value="I love reading books, and I also enjoy writing.">I love reading books, and I also enjoy writing.<br>
+            <input type="radio" name="question6" value="Reading books is fun.">Reading books is fun.<br>
+            <input type="radio" name="question6" value="I am going to school.">I am going to school.<br>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question-group">
+            <h2>Q7: Choose the correct word to complete the sentence:<br>The boy ___ running in the park.</h2>
+            <input type="radio" name="question7" value="is">is<br>
+            <input type="radio" name="question7" value="are">are<br>
+            <input type="radio" name="question7" value="was">was<br>
+            <input type="radio" name="question7" value="were">were<br>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question-group">
+            <h2>Q8: Which of the following words is an adjective?</h2>
+            <input type="radio" name="question8" value="Quickly">Quickly<br>
+            <input type="radio" name="question8" value="Quick">Quick<br>
+            <input type="radio" name="question8" value="Run">Run<br>
+            <input type="radio" name="question8" value="Quickness">Quickness<br>
+        </div>
+        <div class="question-group">
+            <h2>Q9: Choose the correct form of the verb to complete the sentence:<br>She ___ the book before going to bed.</h2>
+            <input type="radio" name="question9" value="reads">reads<br>
+            <input type="radio" name="question9" value="read">read<br>
+            <input type="radio" name="question9" value="reading">reading<br>
+            <input type="radio" name="question9" value="has read">has read<br>
+        </div>
+        
+        <!-- Question 10 -->
+        <div class="question-group">
+            <h2>Q10: Choose the correct punctuation for the following sentence:<br>The teacher asked us to complete the homework on time ___</h2>
+            <input type="radio" name="question10" value=".">.<br>
+            <input type="radio" name="question10" value="!">!<br>
+            <input type="radio" name="question10" value="?">?<br>
+            <input type="radio" name="question10" value=",">,<br>
+        </div>
+        
+        <!-- Question 11 -->
+        <div class="question-group">
+            <h2>Q11: Which of the following sentences is a compound sentence?</h2>
+            <input type="radio" name="question11" value="I love reading books.">I love reading books.<br>
+            <input type="radio" name="question11" value="I love reading books, and I also enjoy writing.">I love reading books, and I also enjoy writing.<br>
+            <input type="radio" name="question11" value="Reading books is fun.">Reading books is fun.<br>
+            <input type="radio" name="question11" value="I am going to school.">I am going to school.<br>
+        </div>
+        
+        <!-- Question 12 -->
+        <div class="question-group">
+            <h2>Q12: Choose the correct word to complete the sentence:<br>The boy ___ running in the park.</h2>
+            <input type="radio" name="question12" value="is">is<br>
+            <input type="radio" name="question12" value="are">are<br>
+            <input type="radio" name="question12" value="was">was<br>
+            <input type="radio" name="question12" value="were">were<br>
+        </div>
+        
+        <!-- Question 13 -->
+        <div class="question-group">
+            <h2>Q13: Which of the following words is an adjective?</h2>
+            <input type="radio" name="question13" value="Quickly">Quickly<br>
+            <input type="radio" name="question13" value="Quick">Quick<br>
+            <input type="radio" name="question13" value="Run">Run<br>
+            <input type="radio" name="question13" value="Quickness">Quickness<br>
+        </div>
+        
+        <!-- Question 14 -->
+        <div class="question-group">
+            <h2>Q14: Choose the correct sentence:</h2>
+            <input type="radio" name="question14" value="He are playing the piano.">He are playing the piano.<br>
+            <input type="radio" name="question14" value="He is playing the piano.">He is playing the piano.<br>
+            <input type="radio" name="question14" value="He playing the piano.">He playing the piano.<br>
+            <input type="radio" name="question14" value="He plays the piano.">He plays the piano.<br>
+        </div>
+        
+        <!-- Question 15 -->
+        <div class="question-group">
+            <h2>Q15: Which of the following is a proper noun?</h2>
+            <input type="radio" name="question15" value="city">city<br>
+            <input type="radio" name="question15" value="john">john<br>
+            <input type="radio" name="question15" value="India">India<br>
+            <input type="radio" name="question15" value="country">country<br>
+        </div>
+        
+        <!-- Question 16 -->
+        <div class="question-group">
+            <h2>Q16: Fill in the blank with the correct form of the verb:<br>She ___ a book every night before bed.</h2>
+            <input type="radio" name="question16" value="reads">reads<br>
+            <input type="radio" name="question16" value="read">read<br>
+            <input type="radio" name="question16" value="reading">reading<br>
+            <input type="radio" name="question16" value="has read">has read<br>
+        </div>
+        
+        <!-- Question 17 -->
+        <div class="question-group">
+            <h2>Q17: Choose the correct sentence:</h2>
+            <input type="radio" name="question17" value="They are going to the park and they plays soccer.">They are going to the park and they plays soccer.<br>
+            <input type="radio" name="question17" value="They are going to the park and they play soccer.">They are going to the park and they play soccer.<br>
+            <input type="radio" name="question17" value="They going to the park and play soccer.">They going to the park and play soccer.<br>
+            <input type="radio" name="question17" value="They going to park and play soccer.">They going to park and play soccer.<br>
+        </div>
+        
+        <!-- Question 18 -->
+        <div class="question-group">
+            <h2>Q18: Choose the correct synonym for the word "difficult":</h2>
+            <input type="radio" name="question18" value="Easy">Easy<br>
+            <input type="radio" name="question18" value="Hard">Hard<br>
+            <input type="radio" name="question18" value="Boring">Boring<br>
+            <input type="radio" name="question18" value="Funny">Funny<br>
+        </div>
+        
+        <!-- Question 19 -->
+        <div class="question-group">
+            <h2>Q19: Choose the correct word to complete the sentence:<br>She has been waiting for her friend ___ 2 hours.</h2>
+            <input type="radio" name="question19" value="since">since<br>
+            <input type="radio" name="question19" value="for">for<br>
+            <input type="radio" name="question19" value="during">during<br>
+            <input type="radio" name="question19" value="by">by<br>
+        </div>
+        
+        <!-- Question 20 -->
+        <div class="question-group">
+            <h2>Q20: What is the correct plural form of the word "child"?</h2>
+            <input type="radio" name="question20" value="childs">childs<br>
+            <input type="radio" name="question20" value="children">children<br>
+            <input type="radio" name="question20" value="childes">childes<br>
+            <input type="radio" name="question20" value="childern">childern<br>
+        </div>
+        
+
+        <button onclick="submitQuiz()">Submit</button>
+        <div class="result" id="result"></div>
+        <a href="lead.html"><button id="seeScoreButton">See Score</button></a>
     </div>
-
-    <div class="question">
-        <h2>Q2: Fill in the blank with a suitable modal:<br>I ___ wake up really late when I was young.</h2>
-        <input type="radio" name="question2" value="must">must<br>
-        <input type="radio" name="question2" value="should">should<br>
-        <input type="radio" name="question2" value="would">would<br>
-        <input type="radio" name="question2" value="used to">used to<br>
-    </div>
-
-    <div class="question">
-        <h2>Q3: What is the meaning of the word juvenile?</h2>
-        <input type="radio" name="question3" value="A minor sentenced to jail.">A minor sentenced to jail.<br>
-        <input type="radio" name="question3" value="A person in their teenage years.">A person in their teenage years.<br>
-        <input type="radio" name="question3" value="A person older than 18 but not older than 25.">A person older than 18 but not older than 25.<br>
-        <input type="radio" name="question3" value="A special dish used for serving food.">A special dish used for serving food.<br>
-    </div>
-
-    <button onclick="submitQuiz()">Submit</button>
-
-    <div class="result" id="result"></div>
-
-    <!-- Initially hidden "See Score" button -->
-    <a href="lead.html"><button id="seeScoreButton">See Score</button></a>
 
     <script>
         function submitQuiz() {
-            // Correct answers
             const correctAnswers = {
-                question1: '3',
-                question2: 'used to',
-                question3: 'A person in their teenage years.'
+                question1: "3",
+                question2: "used to",
+                question3: "A person in their teenage years.",
+                question4: "has read",
+                question5: ".",
+                question6: "I love reading books, and I also enjoy writing.",
+                question7: "is",
+                question8: "Quick"
+                question9: 'has read',
+                question10: '.',
+        question11: 'I love reading books, and I also enjoy writing.',
+        question12: 'is',
+        question13: 'Quick',
+        question14: 'He is playing the piano.',
+        question15: 'India',
+        question16: 'reads',
+        question17: 'They are going to the park and they play soccer.',
+        question18: 'Hard',
+        question19: 'for',
+        question20: 'children'
             };
 
-            // Get user answers
-            const userAnswers = {
-                question1: document.querySelector('input[name="question1"]:checked')?.value,
-                question2: document.querySelector('input[name="question2"]:checked')?.value,
-                question3: document.querySelector('input[name="question3"]:checked')?.value
-            };
+            const userAnswers = {};
+            for (let question in correctAnswers) {
+                userAnswers[question] = document.querySelector(`input[name="${question}"]:checked`)?.value;
+            }
 
-            // Prepare result
-            let resultText = '';
             let correctCount = 0;
+            let resultText = "";
 
             for (let question in correctAnswers) {
-                const userAnswer = userAnswers[question];
-                const correctAnswer = correctAnswers[question];
-
-                if (userAnswer === correctAnswer) {
+                if (userAnswers[question] === correctAnswers[question]) {
                     correctCount++;
-                    resultText += `<p>Q: ${question.replace('question', '')} - Your answer: ${userAnswer} (Correct)</p>`;
+                    resultText += `<p>Q: ${question.replace("question", "")} - Your answer: ${userAnswers[question]} (Correct)</p>`;
                 } else {
-                    resultText += `<p>Q: ${question.replace('question', '')} - Your answer: ${userAnswer || 'No answer'} (Incorrect, correct answer is ${correctAnswer})</p>`;
+                    resultText += `<p>Q: ${question.replace("question", "")} - Your answer: ${userAnswers[question] || "No answer"} (Incorrect, correct answer: ${correctAnswers[question]})</p>`;
                 }
             }
 
-            resultText += `<p>Total correct answers: ${correctCount} out of 3</p>`;
-            document.getElementById('result').innerHTML = resultText;
-
-            // Show the "See Score" button after submitting the quiz
-            document.getElementById('seeScoreButton').style.display = 'inline'; // Make it visible
+            resultText += `<p>Total correct answers: ${correctCount} out of 20</p>`;
+            document.getElementById("result").innerHTML = resultText;
+            document.getElementById("seeScoreButton").style.display = "inline";
         }
     </script>
 </body>
