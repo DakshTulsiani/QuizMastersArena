@@ -257,7 +257,28 @@
                 question20: "children"
             };
 
-            const userAnswers = {};
+            const userAnswers = {
+                question1: document.querySelector('input[name="question1"]:checked')?.value,
+                question2: document.querySelector('input[name="question2"]:checked')?.value,
+                question3: document.querySelector('input[name="question3"]:checked')?.value,
+                question4: document.querySelector('input[name="question4"]:checked')?.value,
+                question5: document.querySelector('input[name="question5"]:checked')?.value,
+                question6: document.querySelector('input[name="question6"]:checked')?.value,
+                question7: document.querySelector('input[name="question7"]:checked')?.value,
+                question8: document.querySelector('input[name="question8"]:checked')?.value,
+                question9: document.querySelector('input[name="question9"]:checked')?.value,
+                question10: document.querySelector('input[name="question10"]:checked')?.value,
+                question11: document.querySelector('input[name="question11"]:checked')?.value,
+                question12: document.querySelector('input[name="question12"]:checked')?.value,
+                question13: document.querySelector('input[name="question13"]:checked')?.value,
+                question14: document.querySelector('input[name="question14"]:checked')?.value,
+                question15: document.querySelector('input[name="question15"]:checked')?.value,
+                question16: document.querySelector('input[name="question16"]:checked')?.value,
+                question17: document.querySelector('input[name="question17"]:checked')?.value,
+                question18: document.querySelector('input[name="question18"]:checked')?.value,
+                question19: document.querySelector('input[name="question19"]:checked')?.value,
+                question20: document.querySelector('input[name="question20"]:checked')?.value
+            };
             for (let question in correctAnswers) {
                 userAnswers[question] = document.querySelector(`input[name="${question}"]:checked`)?.value;
             }
