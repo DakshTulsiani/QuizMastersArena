@@ -77,47 +77,47 @@
 
         <!-- Question 4 -->
         <div class="question-group">
-            <h2>Q4: Choose the correct form of the verb to complete the sentence:<br>She ___ the book before going to bed.</h2>
-            <input type="radio" name="question4" value="reads">reads<br>
-            <input type="radio" name="question4" value="read">read<br>
-            <input type="radio" name="question4" value="reading">reading<br>
-            <input type="radio" name="question4" value="has read">has read<br>
+            <h2>Q4: Identify the type of sentence:<br>Althugh it was raining, we decided to go for a walk.</Q4:I></h2>
+            <input type="radio" name="question4" value="Simple Sentence">Simple Sentence<br>
+            <input type="radio" name="question4" value="Compound Sentence">Compound Sentence<br>
+            <input type="radio" name="question4" value="Complex Sentence">Complex Sentence<br>
+            <input type="radio" name="question4" value="Exclamatory Sentence">Exclamatory Sentence<br>
         </div>
 
         <!-- Question 5 -->
         <div class="question-group">
-            <h2>Q5: Choose the correct punctuation for the following sentence:<br>The teacher asked us to complete the homework on time ___</h2>
-            <input type="radio" name="question5" value=".">.<br>
-            <input type="radio" name="question5" value="!">!<br>
-            <input type="radio" name="question5" value="?">?<br>
-            <input type="radio" name="question5" value=",">,<br>
+            <h2>Q5: Fill in the blanks:<br>If I ____ you, I would apologize immediately.</h2>
+            <input type="radio" name="question5" value="am">am<br>
+            <input type="radio" name="question5" value="was">was<br>
+            <input type="radio" name="question5" value="were">were<br>
+            <input type="radio" name="question5" value="be">be<br>
         </div>
 
         <!-- Question 6 -->
         <div class="question-group">
-            <h2>Q6: Which of the following sentences is a compound sentence?</h2>
-            <input type="radio" name="question6" value="I love reading books.">I love reading books.<br>
-            <input type="radio" name="question6" value="I love reading books, and I also enjoy writing.">I love reading books, and I also enjoy writing.<br>
-            <input type="radio" name="question6" value="Reading books is fun.">Reading books is fun.<br>
-            <input type="radio" name="question6" value="I am going to school.">I am going to school.<br>
+            <h2>Q6: Fill in the blank with the correct preposition:<br>She has been living in this city ___ five years.</h2>
+            <input type="radio" name="question6" value="since">since<br>
+            <input type="radio" name="question6" value="for">for<br>
+            <input type="radio" name="question6" value="from">from<br>
+            <input type="radio" name="question6" value="during">during<br>
         </div>
 
         <!-- Question 7 -->
         <div class="question-group">
-            <h2>Q7: Choose the correct word to complete the sentence:<br>The boy ___ running in the park.</h2>
-            <input type="radio" name="question7" value="is">is<br>
-            <input type="radio" name="question7" value="are">are<br>
-            <input type="radio" name="question7" value="was">was<br>
-            <input type="radio" name="question7" value="were">were<br>
+            <h2>Q7: What is the antonym of the word precious?</h2>
+            <input type="radio" name="question7" value="is">worthless<br>
+            <input type="radio" name="question7" value="are">expensive<br>
+            <input type="radio" name="question7" value="was">rare<br>
+            <input type="radio" name="question7" value="were">unique<br>
         </div>
 
         <!-- Question 8 -->
         <div class="question-group">
-            <h2>Q8: Which of the following words is an adjective?</h2>
-            <input type="radio" name="question8" value="Quickly">Quickly<br>
-            <input type="radio" name="question8" value="Quick">Quick<br>
-            <input type="radio" name="question8" value="Run">Run<br>
-            <input type="radio" name="question8" value="Quickness">Quickness<br>
+            <h2>Q8: Which part of the sentence contains an error?<br>Neither John nor his friends was present at the meeting</h2>
+            <input type="radio" name="question8" value="Quickly">Neither John nor his friends<br>
+            <input type="radio" name="question8" value="Quick">was present<br>
+            <input type="radio" name="question8" value="Run">at the meeting<br>
+            <input type="radio" name="question8" value="Quickness">No error<br>
         </div>
         <div class="question-group">
             <h2>Q9: Choose the correct form of the verb to complete the sentence:<br>She ___ the book before going to bed.</h2>
@@ -235,26 +235,26 @@
     <script>
         function submitQuiz() {
             const correctAnswers = {
-                question1: "3",
-                question2: "used to",
-                question3: "A person in their teenage years.",
-                question4: "has read",
-                question5: ".",
-                question6: "I love reading books, and I also enjoy writing.",
-                question7: "is",
-                question8: "Quick"
-                question9: "has read",
-                question10: ".",
-                question11: "I love reading books, and I also enjoy writing.",
-                question12: "is",
-                question13: "Quick",
-                question14: "He is playing the piano.",
-                question15: "India",
-                question16: "reads",
-                question17: "They are going to the park and they play soccer.",
-                question18: "Hard",
-                question19: "for",
-                question20: "children"
+                question1: '3',
+                question2: 'used to',
+                question3: 'A person in their teenage years.',
+                question4: 'Complex Sentence',
+                question5: 'were',
+                question6: 'for',
+                question7: 'is',
+                question8: 'Quick',
+                question9: 'has read',
+                question10: '.',
+                question11: 'I love reading books, and I also enjoy writing.',
+                question12: 'is',
+                question13: 'Quick',
+                question14: 'He is playing the piano.',
+                question15: 'India',
+                question16: 'reads',
+                question17: 'They are going to the park and they play soccer.',
+                question18: 'Hard',
+                question19: 'for',
+                question20: 'children'
             };
 
             const userAnswers = {
@@ -296,8 +296,8 @@
             }
 
             resultText += `<p>Total correct answers: ${correctCount} out of 20</p>`;
-            document.getElementById("result").innerHTML = resultText;
-            document.getElementById("seeScoreButton").style.display = "inline";
+            document.getElementById('result').innerHTML = resultText;
+            document.getElementById('seeScoreButton').style.display = 'inline';
         }
     </script>
 </body>
