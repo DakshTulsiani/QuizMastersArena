@@ -12,7 +12,6 @@
             font-family: Arial, sans-serif;
             text-align: center;
             margin-top: 20%;
-            background-image: url(d.jpg);
         }
         #progress {
             height: 30px;
@@ -29,7 +28,7 @@
 <body>
     <div id="score-container">
         <h1 id="score" style="font-size: 48px;"></h1>
-        <h2 id="ranking" style="font-size: 36px;"></h2>
+        <h2 id="percentile" style="font-size: 36px;"></h2>
         <div id="progress-bar">
             <div id="progress" style="width: 0;"></div>
         </div>
@@ -37,20 +36,35 @@
 
     <script>
         // Retrieve the score from localStorage
-        const correctAnswers = localStorage.getItem('correctAnswers') || 0;
+        const correctAnswers = parseInt(localStorage.getItem('correctAnswers')) || 0;
         const scoreElement = document.getElementById('score');
-        const rankingElement = document.getElementById('ranking');
+        const percentileElement = document.getElementById('percentile');
         const progressElement = document.getElementById('progress');
 
         // Display the score
         scoreElement.textContent = `You scored: ${correctAnswers} out of 10`;
 
-        // Calculate the ranking percentage
-        let rankingPercentage = (correctAnswers / 10) * 100;
-        rankingElement.textContent = `Your ranking: ${rankingPercentage.toFixed(0)}%`;
+        // Calculate the percentile based on correct answers
+        let percentile;
+        switch (correctAnswers) {
+            case 10: percentile = 99; break;
+            case 9: percentile = 91; break;
+            case 8: percentile = 79; break;
+            case 7: percentile = 71; break;
+            case 6: percentile = 57; break;
+            case 5: percentile = 36; break;
+            case 4: percentile = 27; break;
+            case 3: percentile = 14; break;
+            case 2: percentile = 6; break;
+            case 1: percentile = 2; break;
+            default: percentile = 0; break; // For 0 correct answers
+        }
+
+        // Display the percentile
+        percentileElement.textContent = `Your percentile: ${percentile}%`;
 
         // Update the progress bar
-        progressElement.style.width = `${rankingPercentage}%`;
+        progressElement.style.width = `${percentile}%`;
 
         // Trigger confetti animation
         confetti();
