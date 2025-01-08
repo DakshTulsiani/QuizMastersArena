@@ -12,18 +12,25 @@
             font-family: Arial, sans-serif;
             text-align: center;
             margin-top: 20%;
-            background-image: url(d.jpg);
+        }
+        #score-container {
+            width: 100%; /* Full width for the container */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center items horizontally */
+        }
+        #progress-bar {
+            width: 65%; /* Set the width of the progress bar to 65% */
+            background-color: #ddd;
+            margin: 20px auto; /* Center the progress bar */
+            border-radius: 5px; /* Optional: Add rounded corners */
+            overflow: hidden; /* Ensure the inner div doesn't overflow */
         }
         #progress {
             height: 30px;
             background-color: green;
             transition: width 0.5s;
-        }
-        #progress-bar {
-            width: 65%;
-            background-color: #ddd;
-            margin-top: 20px;
-            margin-left: 300px;
+            border-radius: 5px; /* Optional: Add rounded corners */
         }
     </style>
     <link rel="icon" type="image/x-icon" href="favicon.jpg" />
@@ -69,8 +76,38 @@
         // Update the progress bar
         progressElement.style.width = `${percentile}%`;
 
-        // Trigger confetti animation
-        confetti();
+        // Function to trigger confetti from the sides
+        function fireConfetti() {
+            const duration = 900; // Duration in milliseconds
+            const end = Date.now() + duration;
+
+            (function frame() {
+                // Fire confetti from the left
+                confetti({
+                    particleCount: 100,
+                    startVelocity: 30,
+                    angle: 60,
+                    spread: 55,
+                    origin: { x: 0, y: 0.6 } // Left side
+                });
+
+                // Fire confetti from the right
+                confetti({
+                    particleCount: 100,
+                    startVelocity: 30,
+                    angle: 120,
+                    spread: 55,
+                    origin: { x: 1, y: 0.6 } // Right side
+                });
+
+                if (Date.now() < end) {
+                    requestAnimationFrame(frame);
+                }
+            })();
+        }
+
+        // Trigger the confetti animation
+        fireConfetti();
     </script>
 </body>
 </html>
