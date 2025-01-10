@@ -55,7 +55,10 @@
             </table>
             <button class="btnnn" id="bt" onclick="storeDeposit()">Donate</button>
         </div>
+        <fieldset id="hidden" class="hid">
+            <legend>Congratulations</legend>
         <div id="din" class="dilt"></div>
+    </fieldset>
     </div>
     <script>
         window.onload = function () {
@@ -74,6 +77,10 @@
                 localStorage.setItem(curren, amoun);
                 location.reload()
             }
+            var x = document.getElementById("hidden");
+  if (x.style.display == "none") { 
+    x.style.display = "block";
+  } 
         };
             for (let i = 0; i < localStorage.length; i++) {
                 const curren = localStorage.key(i);

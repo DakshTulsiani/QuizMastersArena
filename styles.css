@@ -198,6 +198,19 @@
         width: 100%;
         text-align: center;
         color: white;
-        margin: 100px 90px;
-        font-size: 30px
+        margin: 100px 24px;
+        font-size: 40px
+    }
+    fieldset{
+        width:1000px;
+        margin-left: 530px;
+        margin-top: 30px;
+    }
+    legend{
+        color: white;
+        font-size: 30px;
+        margin-left: 40px
+    }
+    .hid{
+        display: none;
     }
