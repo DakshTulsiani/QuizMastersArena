@@ -68,26 +68,16 @@
 
             if (curren && amoun) {
                 localStorage.setItem(curren, amoun);
-                alert(`Thanks for donating ${amoun} ${curren} to QuizMastersArena.`); // Show the thank you alert
-                // Optionally reload the page to reflect changes
-                location.reload(); // Uncomment this line if you want to reload the page after donation
+                location.reload()
             }
-        }
-
-        // This function can be used to display stored items in a different way if needed, but we will not call it on page load anymore.
-
-        function displayStoredItems() {
-            let message = "";
+        };
             for (let i = 0; i < localStorage.length; i++) {
                 const curren = localStorage.key(i); // Get the key (currency)
                 const amoun = localStorage.getItem(curren); // Get the value (amount)
-                message += `Thanks for donating ${curren} ${amoun} to QuizMastersArena.\n`; // Append to message
-            }
-            if (message) {
-                console.log(message); // Log the message to the console instead of showing an alert
-            }
-        }
 
+                alert(`Thanks for donating ${curren}${amoun} to QuizMastersArena.`);
+            }
+ 
         // Attach the storeDeposit function to the button click event
         btn.addEventListener('click', storeDeposit);
     </script>
