@@ -2,26 +2,36 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-39RD0DRDW1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-39RD0DRDW1');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-39RD0DRDW1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-39RD0DRDW1');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A science quiz for brave seventh graders, can you pass the ultimate test and be crowned as the winner.">
-    <title>Science Quiz for brave seventh graders.</title>
+    <meta name="description" content="A Science quiz for students with challenging and engaging questions.">
+    <title>Science Quiz</title>
     <style>
         body {
-            color: #2E8B57; font-family: Arial, sans-serif; background-image: url("woe.jpg"); background-size: 100% 100%;
+            font-family: Arial, sans-serif;
+            background-image: url("woe.jpg");
+            background-size: 100% 945px;
+            background-repeat: repeat-y;
+            margin: 0;
+            padding: 0;
+            color: #2E8B57;
+        }
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px;
         }
         h1, h2 {
-            color: #2e8b57;
+            color: #2E8B57;
         }
-        .question {
+        .question-group {
             margin-bottom: 20px;
         }
         .result {
@@ -31,78 +41,149 @@
             display: none;
             text-decoration: none;
         }
-   </style>
-   <link rel="shortcut icon" type="image/x-icon" href="favicon.jpg" />
+    </style>
+    <link rel="icon" type="image/x-icon" href="favicon." />
 </head>
-<body style="height: 945px;">
-    <h1>Answer the questions of this quiz</h1>
+<body>
+    <div class="container">
+        <h1>Answer the Questions</h1>
+        
+        <!-- Question 1 -->
+        <div class="question-group">
+            <h2>Q1: What is the basic unit of life?</h2>
+            <input type="radio" name="question1" value="Atom">Atom<br>
+            <input type="radio" name="question1" value="Cell">Cell<br>
+            <input type="radio" name="question1" value="Molecule">Molecule<br>
+            <input type="radio" name="question1" value="Organ">Organ<br>
+        </div>
 
-    <div class="question">
-        <h2>Q1: Tearing of paper is-</h2>
-        <input type="radio" name="question1" value="irreversible change">irreversible change<br>
-        <input type="radio" name="question1" value="chemical change">chemical change<br>
-        <input type="radio" name="question1" value="not a physical change">not a physical change<br>
-        <input type="radio" name="question1" value="reversible change">reversible change<br>
+        <!-- Question 2 -->
+        <div class="question-group">
+            <h2>Q2: What gas do plants absorb from the atmosphere?</h2>
+            <input type="radio" name="question2" value="Oxygen">Oxygen<br>
+            <input type="radio" name="question2" value="Carbon Dioxide">Carbon Dioxide<br>
+            <input type="radio" name="question2" value="Nitrogen">Nitrogen<br>
+            <input type="radio" name="question2" value="Hydrogen">Hydrogen<br>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question-group">
+            <h2>Q3: What is the process of the water cycle?</h2>
+            <input type="radio" name="question3" value="Evaporation">Evaporation<br>
+            <input type="radio" name="question3" value="Condensation">Condensation<br>
+            <input type="radio" name="question3" value="Precipitation">Precipitation<br>
+            <input type="radio" name="question3" value="All of the above">All of the above<br>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question-group">
+            <h2>Q4: Name the three states of matter.</h2>
+            <input type="radio" name="question4" value="Solid, Liquid, Gas">Solid, Liquid, Gas<br>
+            <input type="radio" name="question4" value="Solid, Liquid, Plasma">Solid, Liquid, Plasma<br>
+            <input type="radio" name="question4" value="Solid, Liquid, Vapor">Solid, Liquid, Vapor<br>
+            <input type="radio" name="question4" value="Solid, Liquid, Gel">Solid, Liquid, Gel<br>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question-group">
+            <h2>Q5: What is the largest organ in the human body?</h2>
+            <input type="radio" name="question5" value="Heart">Heart<br>
+            <input type="radio" name="question5" value="Liver">Liver<br>
+            <input type="radio" name="question5" value="Skin">Skin<br>
+            <input type="radio" name="question5" value="Lungs">Lungs<br>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question-group">
+            <h2>Q6: What is the chemical formula for table salt?</h2>
+            <input type="radio" name="question6" value="NaCl">NaCl<br>
+            <input type="radio" name="question6" value="KCl">KCl<br>
+            <input type="radio" name="question6" value="CaCl2">CaCl2<br>
+            <input type="radio" name="question6" value="MgCl2">MgCl2<br>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question-group">
+            <h2>Q7: How many planets are in our solar system?</h2>
+            <input type="radio" name="question7" value="8">8<br>
+            <input type="radio" name="question7" value="9">9<br>
+            <input type="radio" name="question7" value="7">7<br>
+            <input type="radio" name="question7" value="6">6<br>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question-group">
+            <h2>Q8: What is the primary function of the roots of a plant?</h2>
+            <input type="radio" name="question8" value="Photosynthesis">Photosynthesis<br>
+            <input type="radio" name="question8" value="Water absorption">Water absorption<br>
+            <input type="radio" name="question8" value="Support">Support<br>
+            <input type="radio" name="question8" value="Nutrient storage">Nutrient storage<br>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="question-group">
+            <h2>Q9: What is the difference between a physical change and a chemical change?</h2>
+            <input type="radio" name="question9" value="Physical changes alter appearance, chemical changes alter composition">Physical changes alter appearance, chemical changes alter composition<br>
+            <input type="radio" name="question9" value="Both are the same">Both are the same<br>
+            <input type="radio" name="question9" value="Physical changes are reversible, chemical changes are not">Physical changes are reversible, chemical changes are not<br>
+            <input type="radio" name="question9" value="None of the above">None of the above<br>
+        </div>
+
+        <!-- Updated Question 10 -->
+        <div class="question-group">
+            <h2>Q10: What is the process by which a liquid turns into a gas?</h2>
+            <input type="radio" name="question10" value="Evaporation">Evaporation<br>
+            <input type="radio" name="question10" value="Condensation">Condensation<br>
+            <input type="radio" name="question10" value="Sublimation">Sublimation<br>
+            <input type="radio" name="question10" value="Freezing">Freezing<br>
+        </div>
+
+        <button id="submitButton">Submit</button>
+        <div class="result" id="result"></div>
     </div>
-
-    <div class="question">
-        <h2>Q2: pH of HCl is.</h2>
-        <input type="radio" name="question2" value="7">7<br>
-        <input type="radio" name="question2" value="9">9<br>
-        <input type="radio" name="question2" value="0">0<br>
-        <input type="radio" name="question2" value="3">3<br>
-    </div>
-
-    <div class="question">
-        <h2>Q3: Which of these is soapy to touch?</h2>
-        <input type="radio" name="question3" value="acid">acid<br>
-        <input type="radio" name="question3" value="salt">salt<br>
-        <input type="radio" name="question3" value="spice">spice<br>
-        <input type="radio" name="question3" value="base">base<br>
-    </div>
-
-    <button onclick="submitQuiz()">Submit</button>
-
-    <div class="result" id="result"></div>
-
-    <a href="lead.html"><button id="seeScoreButton">See Score</button></a>
-
     <script>
         function submitQuiz() {
-            // Correct answers
             const correctAnswers = {
-                question1: 'irreversible change',
-                question2: '0',
-                question3: 'base'
+                question1: 'Cell',
+                question2: 'Carbon Dioxide',
+                question3: 'All of the above',
+                question4: 'Solid, Liquid, Gas',
+                question5: 'Skin',
+                question6: 'NaCl',
+                question7: '8',
+                question8: 'Water absorption',
+                question9: 'Physical changes alter appearance, chemical changes alter composition',
+                question10: 'Evaporation'
             };
 
-            // Get user answers
             const userAnswers = {
                 question1: document.querySelector('input[name="question1"]:checked')?.value,
                 question2: document.querySelector('input[name="question2"]:checked')?.value,
-                question3: document.querySelector('input[name="question3"]:checked')?.value
+                question3: document.querySelector('input[name="question3"]:checked')?.value,
+                question4: document.querySelector('input[name="question4"]:checked')?.value,
+                question5: document.querySelector('input[name="question 5"]:checked')?.value,
+                question6: document.querySelector('input[name="question6"]:checked')?.value,
+                question7: document.querySelector('input[name="question7"]:checked')?.value,
+                question8: document.querySelector('input[name="question8"]:checked')?.value,
+                question9: document.querySelector('input[name="question9"]:checked')?.value,
+                question10: document.querySelector('input[name="question10"]:checked')?.value,
             };
 
-            // Prepare result
-            let resultText = '';
             let correctCount = 0;
+            let resultText = "";
 
             for (let question in correctAnswers) {
-                const userAnswer = userAnswers[question];
-                const correctAnswer = correctAnswers[question];
-
-                if (userAnswer === correctAnswer) {
+                if (userAnswers[question] === correctAnswers[question]) {
                     correctCount++;
-                    resultText += `<p>Q: ${question.replace('question', '')} - Your answer: ${userAnswer} (Correct)</p>`;
+                    resultText += `<p>Q: ${question.replace("question", "")} - Your answer: ${userAnswers[question]} (Correct)</p>`;
                 } else {
-                    resultText += `<p>Q: ${question.replace('question', '')} - Your answer: ${userAnswer || 'No answer'} (Incorrect, correct answer is ${correctAnswer})</p>`;
+                    resultText += `<p>Q: ${question.replace("question", "")} - Your answer: ${userAnswers[question] || "No answer"} (Incorrect, correct answer: ${correctAnswers[question]})</p>`;
                 }
             }
 
-            resultText += `<p>Total correct answers: ${correctCount} out of 3</p>`;
+            resultText += `<p>Total correct answers: ${correctCount} out of 10</p>`;
             document.getElementById('result').innerHTML = resultText;
-
-            // Show the "See Score" button
+            localStorage.setItem('correctAnswers', correctCount); // Store the score in localStorage
             document.getElementById('seeScoreButton').style.display = 'inline';
         }
     </script>
