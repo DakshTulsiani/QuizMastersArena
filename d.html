@@ -27,7 +27,7 @@
         </div>
         <div class="content">
             <h1><span>Donate To Us</span></h1>
-            <h4>Hey, so you want to invest in our company. Don't worry, as of now, this is just a hypothetical amount you are investing in our company via an imaginary check.</h4>
+            <p>Hey, so you want to invest in our company. Don't worry, as of now, this is just a hypothetical amount you are investing in our company via an imaginary check.</p>
             <table class="table-responsive h">
                 <tbody>
                     <tr>
@@ -54,9 +54,45 @@
                     </tr>
                 </tbody>
             </table>
-            <button class="btnnn" onclick="storeDeposit()">Donate</button>
+            <button class="btnnn" id="bt" onclick="storeDeposit()">Donate</button>
             <button class="cn"><a href="1.html">Start Adventure</a></button>
         </div>
     </div>
+    <script>
+        const currency = document.getElementById('currency');
+        const amount = document.getElementById('amount');
+        const btn = document.getElementById('bt');
+    
+        function storeDeposit() {
+            const curren = currency.value;
+            const amoun = amount.value;
+    
+            if (curren && amoun) {
+                localStorage.setItem(curren, amoun);
+                alert(`Thanks for donating ${amoun} ${curren} to QuizMastersArena.`); // Show the thank you alert
+                location.reload(); // Reload the page to reflect changes
+            }
+        }
+    
+        function displayStoredItems() {
+            let message = "";
+            for (let i = 0; i < localStorage.length; i++) {
+                const curren = localStorage.key(i); // Get the key (currency)
+                const amoun = localStorage.getItem(curren); // Get the value (amount)
+                message += `Thanks for donating ${amoun} ${curren} to QuizMastersArena.\n`; // Append to message
+            }
+            if (message) {
+                alert(message); // Show the alert with all items
+            } else {
+                alert("No donations found."); // Alert if no items are stored
+            }
+        }
+    
+        // Call the function to display items when the page loads
+        window.onload = displayStoredItems;
+    
+        // Attach the storeDeposit function to the button click event
+        btn.addEventListener('click', storeDeposit);
+    </script>
 </body>
 </html>

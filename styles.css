@@ -71,7 +71,7 @@
         color: #fff;
         position: relative;
     }
-    .content h4{
+    .content p{
         padding-left: 20px;
         padding-bottom: 25px;
         font-family: Arial;
@@ -189,4 +189,8 @@
         text-align: center;
         display: block;
         margin: auto;
+        margin-left: 643px;
+    }
+    .cur{
+        font-family: Arial;
     }
