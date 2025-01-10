@@ -2,26 +2,36 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-39RD0DRDW1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-39RD0DRDW1');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-39RD0DRDW1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-39RD0DRDW1');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A maths quiz for brave seventh graders, can you pass the ultimate test and be crowned as the winner.">
-    <title>Maths Quiz for brave seventh-graders.</title>
+    <meta name="description" content="A Science quiz for students with challenging and engaging questions.">
+    <title>Math Quiz</title>
     <style>
         body {
-            color: #2E8B57; font-family: Arial, sans-serif; background-image: url("woe.jpg"); background-size: 100% 100%;
+            font-family: Arial, sans-serif;
+            background-image: url("woe.jpg");
+            background-size: 100% 945px;
+            background-repeat: repeat-y;
+            margin: 0;
+            padding: 0;
+            color: #2E8B57;
+        }
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px;
         }
         h1, h2 {
-            color: #2e8b57;
+            color: #2E8B57;
         }
-        .question {
+        .question-group {
             margin-bottom: 20px;
         }
         .result {
@@ -31,78 +41,150 @@
             display: none;
             text-decoration: none;
         }
-   </style>
-   <link rel="shortcut icon" type="image/x-icon" href="favicon.jpg" />
+    </style>
+    <link rel="icon" type="image/x-icon" href="favicon." />
 </head>
-<body style="height: 945px;">
-    <h1>Answer the questions of this quiz</h1>
+<body>
+    <div class="container">
+        <h1>Answer the Questions</h1>
+        
+        <!-- Question 1 -->
+        <div class="question-group">
+            <h2>Q1: What is the value of π (pi) to two decimal places?</h2>
+            <input type="radio" name="question1" value="3.15">3.15<br>
+            <input type="radio" name="question1" value="3.16">3.16<br>
+            <input type="radio" name="question1" value="3.14">3.14<br>
+            <input type="radio" name="question1" value="3.13">3.13<br>
+        </div>
 
-    <div class="question">
-        <h2>Q1: Find the mean of the given data- 16, 15, 19, 8, 12.</h2>
-        <input type="radio" name="question1" value="13">13<br>
-        <input type="radio" name="question1" value="16">16<br>
-        <input type="radio" name="question1" value="14">14<br>
-        <input type="radio" name="question1" value="15">15<br>
+        <!-- Question 2 -->
+        <div class="question-group">
+            <h2>Q2: What is the area of a rectangle with a length of 5 cm and a width of 3 cm?</h2>
+            <input type="radio" name="question2" value="8 cm²">8 cm²<br>
+            <input type="radio" name="question2" value="10 cm²">10 cm²<br>
+            <input type="radio" name="question2" value="12 cm²">12 cm²<br>
+            <input type="radio" name="question2" value="15 cm²">15 cm²<br>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question-group">
+            <h2>Q3: What is the value of 7²?</h2>
+            <input type="radio" name="question3" value="49">49<br>
+            <input type="radio" name="question3" value="56">56<br>
+            <input type="radio" name="question3" value="42">42<br>
+            <input type="radio" name="question3" value="36">36<br>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question-group">
+            <h2>Q4: What is the perimeter of a square with a side length of 4 cm?</h2>
+            <input type="radio" name="question4" value="16 cm">16 cm<br>
+            <input type="radio" name="question4" value="12 cm">12 cm<br>
+            <input type="radio" name="question4" value="8 cm">8 cm<br>
+            <input type="radio" name="question4" value="20 cm">20 cm<br>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question-group">
+            <h2>Q5: What is the value of the expression 3x + 4 when x = 2?</h2>
+            <input type="radio" name="question5" value="10">10<br>
+            <input type="radio" name=" question5" value="11">11<br>
+            <input type="radio" name="question5" value="12">12<br>
+            <input type="radio" name="question5" value="9">9<br>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question-group">
+            <h2>Q6: What is the value of the expression ( 3x - 4 ) when ( x = 5 )?</h2>
+            <input type="radio" name="question6" value="3">10<br>
+            <input type="radio" name="question6" value="2">11<br>
+            <input type="radio" name="question6" value="1">15<br>
+            <input type="radio" name="question6" value="0">5<br>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question-group">
+            <h2>Q7: What is the value of 15% of 200?</h2>
+            <input type="radio" name="question7" value="30">30<br>
+            <input type="radio" name="question7" value="25">25<br>
+            <input type="radio" name="question7" value="35">35<br>
+            <input type="radio" name="question7" value="20">20<br>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question-group">
+            <h2>Q8: What is the sum of the interior angles of a triangle?</h2>
+            <input type="radio" name="question8" value="180 degrees">180 degrees<br>
+            <input type="radio" name="question8" value="360 degrees">360 degrees<br>
+            <input type="radio" name="question8" value="90 degrees">90 degrees<br>
+            <input type="radio" name="question8" value="270 degrees">270 degrees<br>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="question-group">
+            <h2>Q9: What is the greatest common factor (GCF) of 12 and 16?</h2>
+            <input type="radio" name="question9" value="2">2<br>
+            <input type="radio" name="question9" value="8">8<br>
+            <input type="radio" name="question9" value="4">4<br>
+            <input type="radio" name="question9" value="6">6<br>
+        </div>
+
+        <!-- Updated Question 10 -->
+        <div class="question-group">
+            <h2>Q10: What is the value of the expression 5(2 + 3)?</h2>
+            <input type="radio" name="question10" value="20">20<br>
+            <input type="radio" name="question10" value="15">15<br>
+            <input type="radio" name="question10" value="25">25<br>
+            <input type="radio" name="question10" value="30">30<br>
+        </div>
+
+        <button id="submitButton">Submit</button>
+        <div class="result" id="result"></div>
     </div>
-
-    <div class="question">
-        <h2>Q2: The sum of the exterior angles of a triangle is-</h2>
-        <input type="radio" name="question2" value="360°">360°<br>
-        <input type="radio" name="question2" value="180°">180°<br>
-        <input type="radio" name="question2" value="540°">540°<br>
-        <input type="radio" name="question2" value="270°">270°<br>
-    </div>
-
-    <div class="question">
-        <h2>Q3: Name the complement of an angle which is 3x-8:</h2>
-        <input type="radio" name="question3" value="2x+82">2x+82<br>
-        <input type="radio" name="question3" value="3x+82">3x+82<br>
-        <input type="radio" name="question3" value="98-3x">98-3x<br>
-        <input type="radio" name="question3" value="30+6x">30+6x<br>
-    </div>
-
-    <button onclick="submitQuiz()">Submit</button>
-
-    <div class="result" id="result"></div>
-
-    <a href="lead.html"><button id="seeScoreButton">See Score</button></a>
-
     <script>
         function submitQuiz() {
-            // Correct answers
             const correctAnswers = {
-                question1: '14',
-                question2: '360°',
-                question3: '98-3x'
+                question1: '3.14',
+                question2: '15 cm²',
+                question3: '49',
+                question4: '16 cm',
+                question5: '10',
+                question6: '2',
+                question7: '30',
+                question8: '180 degrees',
+                question9: '4',
+                question10: '25'
             };
 
-            // Get user answers
             const userAnswers = {
                 question1: document.querySelector('input[name="question1"]:checked')?.value,
                 question2: document.querySelector('input[name="question2"]:checked')?.value,
-                question3: document.querySelector('input[name="question3"]:checked')?.value
+                question3: document.querySelector('input[name="question3"]:checked')?.value,
+                question4: document.querySelector('input[name="question4"]:checked')?.value,
+                question5: document.querySelector('input[name="question5"]:checked')?.value,
+                question6: document.querySelector('input[name="question6"]:checked')?.value,
+                question7: document.querySelector('input[name="question7"]:checked')?.value,
+                question8: document.querySelector('input[name="question8"]:checked')?.value,
+                question9: document.querySelector('input[name="question9"]:checked')?.value,
+                question10: document.querySelector('input[name="question10"]:checked')?.value,
             };
 
-            // Prepare result
-            let resultText = '';
             let correctCount = 0;
+            let resultText = "";
+
 
             for (let question in correctAnswers) {
-                const userAnswer = userAnswers[question];
-                const correctAnswer = correctAnswers[question];
-
-                if (userAnswer === correctAnswer) {
+                if (userAnswers[question] === correctAnswers[question]) {
                     correctCount++;
-                    resultText += `<p>Q: ${question.replace('question', '')} - Your answer: ${userAnswer} (Correct)</p>`;
+                    resultText += `<p>Q: ${question.replace("question", "")} - Your answer: ${userAnswers[question]} (Correct)</p>`;
                 } else {
-                    resultText += `<p>Q: ${question.replace('question', '')} - Your answer: ${userAnswer || 'No answer'} (Incorrect, correct answer is ${correctAnswer})</p>`;
+                    resultText += `<p>Q: ${question.replace("question", "")} - Your answer: ${userAnswers[question] || "No answer"} (Incorrect, correct answer: ${correctAnswers[question]})</p>`;
                 }
             }
 
-            resultText += `<p>Total correct answers: ${correctCount} out of 3</p>`;
+            resultText += `<p>Total correct answers: ${correctCount} out of 10</p>`;
             document.getElementById('result').innerHTML = resultText;
-
-            // Show the "See Score" button
+            localStorage.setItem('correctAnswers', correctCount); // Store the score in localStorage
             document.getElementById('seeScoreButton').style.display = 'inline';
         }
     </script>
