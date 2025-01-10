@@ -58,6 +58,8 @@
     </div>
     <div id="din" class="dilt"></div>
     <script>
+        window.onload = function () {
+            localStorage.clear();
         const currency = document.getElementById('currency');
         const amount = document.getElementById('amount');
         const btn = document.getElementById('bt');
@@ -78,6 +80,7 @@
 
                din.innerHTML += `Thanks for donating ${curren}${amoun} to QuizMastersArena.`;
             }
+        }
     </script>
 </body>
 </html>
