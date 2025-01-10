@@ -62,31 +62,30 @@
     </div>
     <script>
         window.onload = function () {
-            localStorage.clear();
-        }
-        const currency = document.getElementById('currency');
-        const amount = document.getElementById('amount');
-        const btn = document.getElementById('bt');
-        const din = document.getElementById('din')
+    localStorage.clear();
+}
 
-        function storeDeposit() {
-            const curren = currency.value;
-            const amoun = amount.value;
+const currency = document.getElementById('currency');
+const amount = document.getElementById('amount');
+const btn = document.getElementById('bt');
+const din = document.getElementById('din');
 
-            if (curren && amoun) {
-                localStorage.setItem(curren, amoun);
-                location.reload()
-            }
-            var x = document.getElementById("hidden");
-  if (x.style.display == "none") { 
-    x.style.display = "block";
-  } 
-        };
-            for (let i = 0; i < localStorage.length; i++) {
-                const curren = localStorage.key(i);
-                const amoun = localStorage.getItem(curren);
-               din.innerHTML += `Thanks for donating ${curren}${amoun} to QuizMastersArena.`;
-            }
+function storeDeposit() {
+    const curren = currency.value;
+    const amoun = amount.value;
+
+    if (curren && amoun) {
+        localStorage.setItem(curren, amoun);
+        var x = document.getElementById("hidden");
+        x.style.display = "block"; // Show the fieldset
+
+        // Clear the previous content before adding new
+        din.innerHTML = ''; 
+
+        // Display the donation message without a space between currency and amount
+        din.innerHTML += `Thanks for donating ${curren}${amoun} to QuizMastersArena.`;
+    }
+}
     </script>
 </body>
 </html>
