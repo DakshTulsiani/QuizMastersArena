@@ -54,13 +54,14 @@
                 </tbody>
             </table>
             <button class="btnnn" id="bt" onclick="storeDeposit()">Donate</button>
-            <button class="cn"><a href="1.html">Start Adventure</a></button>
         </div>
     </div>
+    <div id="din" class="dilt"></div>
     <script>
         const currency = document.getElementById('currency');
         const amount = document.getElementById('amount');
         const btn = document.getElementById('bt');
+        const din = document.getElementById('din')
 
         function storeDeposit() {
             const curren = currency.value;
@@ -75,7 +76,7 @@
                 const curren = localStorage.key(i); // Get the key (currency)
                 const amoun = localStorage.getItem(curren); // Get the value (amount)
 
-                alert(`Thanks for donating ${curren}${amoun} to QuizMastersArena.`);
+               din.innerHTML += `Thanks for donating ${curren}${amoun} to QuizMastersArena.`;
             }
     </script>
 </body>
