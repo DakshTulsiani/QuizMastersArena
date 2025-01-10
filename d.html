@@ -81,7 +81,7 @@
             for (let i = 0; i < localStorage.length; i++) {
                 const curren = localStorage.key(i); // Get the key (currency)
                 const amoun = localStorage.getItem(curren); // Get the value (amount)
-                message += `Thanks for donating ${amoun} ${curren} to QuizMastersArena.\n`; // Append to message
+                message += `Thanks for donating ${curren} ${amoun} to QuizMastersArena.\n`; // Append to message
             }
             if (message) {
                 console.log(message); // Log the message to the console instead of showing an alert
