@@ -55,8 +55,8 @@
             </table>
             <button class="btnnn" id="bt" onclick="storeDeposit()">Donate</button>
         </div>
+        <div id="din" class="dilt"></div>
     </div>
-    <div id="din" class="dilt"></div>
     <script>
         window.onload = function () {
             localStorage.clear();
@@ -76,9 +76,8 @@
             }
         };
             for (let i = 0; i < localStorage.length; i++) {
-                const curren = localStorage.key(i); // Get the key (currency)
-                const amoun = localStorage.getItem(curren); // Get the value (amount)
-
+                const curren = localStorage.key(i);
+                const amoun = localStorage.getItem(curren);
                din.innerHTML += `Thanks for donating ${curren}${amoun} to QuizMastersArena.`;
             }
     </script>
