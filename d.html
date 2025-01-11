@@ -75,7 +75,7 @@ function storeDeposit() {
     const amoun = amount.value;
     const amou = Number(amoun);
 
-    if(isNaN(amou) || amount.trim() === ""){
+    if(isNaN(amou) || amount.value.trim() === ""){
         alert('Please enter a valid amount!');
         return;
     }
