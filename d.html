@@ -75,6 +75,12 @@ function storeDeposit() {
     const amoun = amount.value;
     const amou = Number(amoun);
 
+    
+    if(curren === ""){
+        alert('Please select a valid currency!');
+        return;
+    }
+    
     if(isNaN(amou) || amount.value.trim() === ""){
         alert('Please enter a valid amount!');
         return;
@@ -87,11 +93,6 @@ function storeDeposit() {
 
     if(amou > 99999){
         alert(`Maximum donation is ${curren}99999!`);
-        return;
-    }
-
-    if(curren === ""){
-        alert('Please select a valid currency!');
         return;
     }
 
