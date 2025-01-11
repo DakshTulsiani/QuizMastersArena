@@ -36,7 +36,7 @@
                         <td class="second">
                             <div class="blue">
                                 <select id="currency" class="d">
-                                    <option disabled>Select</option>
+                                    <option value="">Select</option>
                                     <option value="€">Euro (€)</option>
                                     <option value="$">U.S. Dollar ($)</option>
                                     <option value="¥">Japanese Yen (¥)</option>
@@ -73,6 +73,27 @@ const din = document.getElementById('din');
 function storeDeposit() {
     const curren = currency.value;
     const amoun = amount.value;
+    const amou = Number(amount);
+
+    if(isNaN(amou) || amount.trim() === ""){
+        alert('Please enter a valid amount!');
+        return;
+    }
+
+    if(amou < 100){
+        alert(`Minimum donation is ${curren}100!`);
+        return;
+    }
+
+    if(amou > 99999){
+        alert(`Maximum donation is ${curren}99999!`);
+        return;
+    }
+
+    if(curren === ""){
+        alert('Please select a valid currency!');
+        return;
+    }
 
     if (curren && amoun) {
         localStorage.setItem(curren, amoun);
