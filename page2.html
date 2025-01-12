@@ -21,7 +21,7 @@
 <body>
   <div class="hero">
     <div class="hero-background">
-      <h1>Welcome, dear students to the QuizMaster Arena</h1>
+      <h1 id="named"></h1>
       <h2>Choose Your Class:</h2>
       <select id="class-select">
         <option value="Class 1">Class 1</option>
@@ -40,6 +40,10 @@
           localStorage.setItem('class', selectedClass);
           window.location.href = 'subject.html';
         }
+        const named =localStorage.getItem('playerName')
+        const nameds = document.getElementById('named')
+        nameds.innerHTML += `Welcome, ${playerName} to the QuizMaster Arena`;
+
       </script>
     </div>
   </div>
